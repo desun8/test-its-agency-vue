@@ -1,24 +1,21 @@
 # test-its-agency-vue
 
-## Project setup
-```
-npm install
-```
+## Функции:
+- Слайдер
+- Фильтрация по типам товаров
+- Сортировка по убыванию и возрастанию цены
+- Добавление товара в корзину
+- Открытие и закрытие модального окна с корзиной
+- Изменение количества товаров в корзине
+- Расчет стоимости товаров в корзине
+- Удаление товара из корзины
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Требования:
+- Адаптивность
+- Минимальная кроссбраузерность (последние версии Chrome и Safari)
+- Сохранение пропорций изображений при изменении ширины экрана
+- Соответствие макету
+- Не использовать Bootstrap и jQuery
+- Круто, если используете Pug
+- Из JS-фреймворков / библиотек можно использовать только Vue.js (при желании)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
