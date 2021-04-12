@@ -9,21 +9,13 @@
     div.container
       button.close(ref="btnClose" @click="onClose" aria-label="Закрыть модальное окно")
         span.close__icon(ref="btnCloseIcon")
-      
+
       div.container__body(data-scroll-lock-scrollable)
-        simplebar(data-simplebar-auto-hide="false")
-          slot
+        slot
 </template>
 
 <script>
-import simplebar from "simplebar-vue";
-import "simplebar/dist/simplebar.min.css";
-
 export default {
-  components: {
-    simplebar,
-  },
-
   props: {
     type: String,
   },
@@ -39,9 +31,9 @@ export default {
   computed: {
     isOpen() {
       switch (this.type) {
-        case "basket":
+        case 'basket':
           return this.$root.isBasketModalOpen;
-        case "filter":
+        case 'filter':
           return this.$root.isFilterModalOpen;
         default:
           return false;
@@ -51,7 +43,7 @@ export default {
 
   methods: {
     onClose() {
-      if (this.type === "basket") {
+      if (this.type === 'basket') {
         this.$root.setIsBasketModalOpen(false);
       } else {
         this.$root.setIsFilterModalOpen(false);
@@ -74,9 +66,9 @@ export default {
       this.touchStart = event.changedTouches[0].clientY;
 
       if (
-        event.target === this.$refs.modal ||
-        event.target === this.$refs.btnClose ||
-        event.target === this.$refs.btnCloseIcon
+          event.target === this.$refs.modal ||
+          event.target === this.$refs.btnClose ||
+          event.target === this.$refs.btnCloseIcon
       ) {
         this.validTarget = true;
       }
@@ -94,14 +86,6 @@ export default {
 <style lang="scss" scoped>
 $modal-dur: 0.2s;
 $container-dur: 0.4s;
-
-[data-simplebar] {
-  height: 100%;
-}
-
-[data-simplebar]::v-deep .simplebar-track {
-  display: none;
-}
 
 .modal {
   position: fixed;
@@ -140,7 +124,7 @@ $container-dur: 0.4s;
 .container {
   position: relative;
   height: 100%;
-  padding: 54px $gap-x;
+  padding-top: 54px;
   background-color: #fff;
   border-radius: 24px 24px 0 0;
   transform: translateY(100%);
@@ -150,7 +134,7 @@ $container-dur: 0.4s;
     width: 100%;
     max-width: 600px;
     margin-left: auto;
-    padding: 40px;
+    padding-top: 0;
     border-radius: 0;
     transform: translateX(100%);
   }
@@ -167,7 +151,15 @@ $container-dur: 0.4s;
 
 .container__body {
   height: 100%;
+  padding-left: $gap-x;
+  padding-right: $gap-x;
   overflow: auto;
+
+  @media (min-width: 48em) {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .close {

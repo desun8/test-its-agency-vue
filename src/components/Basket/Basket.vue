@@ -122,10 +122,12 @@ export default {
   background-color: #fff;
 
   @media (min-width: 48em) {
+    right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+    padding-right: 20px;
   }
 }
 
