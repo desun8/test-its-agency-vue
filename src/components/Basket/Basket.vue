@@ -69,10 +69,10 @@ export default {
 
 <style lang="scss" scoped>
 .basket {
-  padding-bottom: 90px; /* bottombar */
+  padding-bottom: 140px; /* bottombar */
 
   @media (min-width: 48em) {
-    padding-bottom: 140px;
+    padding-bottom: 160px;
   }
 }
 
