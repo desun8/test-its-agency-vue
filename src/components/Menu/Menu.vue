@@ -3,15 +3,20 @@
     ul.menu__list
       each val in ["Продукты", "Цвета", "Вдохновение", "Советы", "Найти магазин"]
         li
-          a.menu__link(href="")= val
+          a.menu__link(href="#")= val
 </template>
 
 <style lang="scss" scoped>
 .menu {
+  display: none;
   font-size: 14px;
   line-height: 1;
   letter-spacing: $ls-wider;
   text-transform: uppercase;
+
+  @media (min-width: 64em) {
+    display: block;
+  }
 
   @media (min-width: 100em) {
     justify-self: start;
@@ -21,13 +26,9 @@
 }
 
 .menu__list {
-  display: none;
+  display: grid;
   grid-auto-flow: column;
   gap: 24px;
-
-  @media (min-width: 64em) {
-    display: grid;
-  }
 }
 
 .menu__link {
