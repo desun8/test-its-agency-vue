@@ -1,6 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const tailwindcss = require("tailwindcss");
+const postcssHoverMediaFeature = require("postcss-hover-media-feature");
 
 module.exports = {
-  plugins: [tailwindcss]
+  plugins: [tailwindcss, postcssHoverMediaFeature],
 };
