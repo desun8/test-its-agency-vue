@@ -3,6 +3,7 @@
     li.list__item
       label.toggle(:for="`toggle-new${idPrefix}`")
         input.toggle__input(
+          v-model="modelNew"
           :id="`toggle-new${idPrefix}`"
           @change="onToggle"
           type="checkbox"
@@ -13,6 +14,7 @@
     li.list__item
       label.toggle(:for="`toggle-stock${idPrefix}`")
         input.toggle__input(
+          v-model="modelStock"
           :id="`toggle-stock${idPrefix}`"
           @change="onToggle"
           type="checkbox"
@@ -23,6 +25,7 @@
     li.list__item
       label.toggle(:for="`toggle-contracts${idPrefix}`")
         input.toggle__input(
+          v-model="modelContracts"
           :id="`toggle-contracts${idPrefix}`"
           @change="onToggle"
           type="checkbox"
@@ -33,6 +36,7 @@
     li.list__item
       label.toggle(:for="`toggle-exclusive${idPrefix}`")
         input.toggle__input(
+          v-model="modelExclusive"
           :id="`toggle-exclusive${idPrefix}`"
           @change="onToggle"
           type="checkbox"
@@ -43,6 +47,7 @@
     li.list__item
       label.toggle(:for="`toggle-sale${idPrefix}`")
         input.toggle__input(
+          v-model="modelSale"
           :id="`toggle-sale${idPrefix}`"
           @change="onToggle"
           type="checkbox"
@@ -59,12 +64,32 @@ export default {
   },
 
   computed: {
+    modelNew() {
+      return this.$root.filter.some(item => item === 'new');
+    },
+
+    modelStock() {
+      return this.$root.filter.some(item => item === 'stock');
+    },
+
+    modelContracts() {
+      return this.$root.filter.some(item => item === 'contracts');
+    },
+
+    modelExclusive() {
+      return this.$root.filter.some(item => item === 'exclusive');
+    },
+
+    modelSale() {
+      return this.$root.filter.some(item => item === 'sale');
+    },
+
     idPrefix() {
       if (this.type) {
         return `--${this.type}`;
       }
 
-      return "";
+      return '';
     },
   },
 
@@ -87,6 +112,7 @@ export default {
   display: grid;
   gap: 10px;
 }
+
 .list__item {
 }
 
