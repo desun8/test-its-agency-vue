@@ -4,14 +4,15 @@
     div.sm
       Title
     div.lg
-    Carousel
-      Title
+      Carousel
+        Title
 </template>
 
 <script>
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Title from "@/components/Title";
-import Carousel from "@/components/Carousel";
+import Breadcrumbs from '@/components/Breadcrumbs';
+import Title from '@/components/Catalog/Title';
+import Carousel from '@/components/Carousel';
+
 export default {
   components: {
     Breadcrumbs,

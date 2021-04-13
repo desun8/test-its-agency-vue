@@ -60,7 +60,7 @@
   color: rgba($c-black, 1);
 
   @media (min-width: 64em) {
-    color: rgba(#fff, 0.3);
+    color: rgba(#fff, 1);
   }
 }
 </style>

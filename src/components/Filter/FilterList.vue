@@ -64,24 +64,44 @@ export default {
   },
 
   computed: {
-    modelNew() {
-      return this.$root.filter.some(item => item === 'new');
+    modelNew: {
+      get() {
+        return this.$root.filter.some(item => item === 'new');
+      },
+
+      set() {}
     },
 
-    modelStock() {
-      return this.$root.filter.some(item => item === 'stock');
+    modelStock: {
+      get() {
+        return this.$root.filter.some(item => item === 'stock');
+      },
+
+      set() {}
     },
 
-    modelContracts() {
-      return this.$root.filter.some(item => item === 'contracts');
+    modelContracts: {
+      get() {
+        return this.$root.filter.some(item => item === 'contracts');
+      },
+
+      set() {}
     },
 
-    modelExclusive() {
-      return this.$root.filter.some(item => item === 'exclusive');
+    modelExclusive: {
+      get() {
+        return this.$root.filter.some(item => item === 'exclusive');
+      },
+
+      set() {}
     },
 
-    modelSale() {
-      return this.$root.filter.some(item => item === 'sale');
+    modelSale: {
+      get() {
+        return this.$root.filter.some(item => item === 'sale');
+      },
+
+      set() {}
     },
 
     idPrefix() {

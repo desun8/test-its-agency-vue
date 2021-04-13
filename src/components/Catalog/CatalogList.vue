@@ -1,7 +1,7 @@
 <template lang="pug">
   div.container(v-if="items")
     Card(
-      v-for="item in filteredItems" 
+      v-for="item in filteredItems"
       :key="item.id"
       :id="item.id"
       :name="item.name"
@@ -40,7 +40,6 @@ export default {
                 isStock = true;
                 return item.stock;
               default:
-                console.log("stock", isStock);
                 if (isStock) {
                   return item.stock && value === item.type;
                 }
